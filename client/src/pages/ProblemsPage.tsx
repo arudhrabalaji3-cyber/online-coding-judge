@@ -48,7 +48,6 @@ function ProblemsPage() {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
        />
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       <div className="problems-list">
         {filteredProblems.map((problem) => (
