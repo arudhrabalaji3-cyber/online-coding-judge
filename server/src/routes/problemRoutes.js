@@ -1,4 +1,5 @@
 const express = require("express");
+const authMiddleware = require("../middleware/authMiddleware");
 
 const {
     getProblems,
@@ -11,7 +12,7 @@ const {
 const router = express.Router();
 
 router.get("/", getProblems);
-router.post("/", createProblem);
+router.post("/", authMiddleware, createProblem);
 router.get("/:id", getProblemById);
 router.put("/:id", updateProblem);
 router.delete("/:id", deleteProblem);
