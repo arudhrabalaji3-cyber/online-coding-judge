@@ -15,5 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/problems", problemRoutes);
+const authRoutes = require("./routes/authRoutes");
 
+app.use("/api/auth", authRoutes);
 module.exports = app;

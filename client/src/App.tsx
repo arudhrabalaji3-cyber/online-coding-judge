@@ -1,18 +1,26 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import ProblemsPage from "./pages/ProblemsPage";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Problems from "./pages/Problems";
 import ProblemDetailsPage from "./pages/ProblemDetailsPage.tsx";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/problems" replace />} />
-        <Route path="/problems" element={<ProblemsPage />} />
-        <Route path="/problems/:id" element={<ProblemDetailsPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Navigate to="/login" replace />} />
+
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+
+                <Route path="/problems" element={<Problems />} />
+                <Route path="/problems/:id" element={<ProblemDetailsPage />} />
+
+                <Route path="*" element={<Navigate to="/login" replace />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
